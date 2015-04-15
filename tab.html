@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>选项卡</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	input{
+		height: 50px;
+		width: 50px;
+	}
+	div{
+		height: 100px;
+		width: 100px;
+	}
+	#div1{background-color: red;
+		display: none;}
+	#div2{background-color: blue;
+		display:none;}
+	#div3{background-color: green;
+		display: none;
+	}
+	
+	</style>
+</head>
+<body>
+	<input type="button" value="1">
+	<input type="button" value="2">
+	<input type="button" value="3">
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+</body>
+<script type="text/javascript">
+	window.onload=function()
+	{
+		var btn=document.getElementsByTagName('input');
+		var odiv=document.getElementsByTagName("div");
+		//alert("a");
+		for(i=0;i<btn.length;i++)
+		{
+			btn[i].index=i;
+			//alert(btn[i].index)
+			btn[i].onclick=function ()
+			{
+				//alert(this.index);
+				for(i=0;i<btn.length;i++)
+				{
+					odiv[i].style.display="none";
+				}
+				
+				odiv[this.index].style.display="block";
+
+
+			}
+		}
+			
+			
+	}
+
+
+
+</script>
+</html>
